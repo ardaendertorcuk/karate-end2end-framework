@@ -2,7 +2,6 @@ Feature: apitest
 
   Background:
     * def userID = '31yc7wrduvdb5cly6qbusrska5oq'
-#    * url 'https://api.spotify.com/v1'
     * url baseUrl
 
   Scenario: Kullanıcı yeni bir çalma listesine şarkı ekler

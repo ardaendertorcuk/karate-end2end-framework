@@ -1,12 +1,14 @@
 Feature: uitest
   Background:
+    * def HomePage = read('/elements/HomePage.json')
+    * def LoginPage = read('/elements/LoginPage.json')
     Given driver "https://open.spotify.com"
     And driver.fullscreen()
 
   Scenario: Spotify arayüz test senaryosu
-    Given click("button[data-testid='login-button']")
-    Then waitFor('#login-username')
-    And input('#login-username','arda.torcuk@testinium.com')
+    Given click(HomePage.LoginButton)
+    Then waitFor(LoginPage.UsernameInput)
+    And input(LoginPage.UsernameInput,'arda.torcuk@testinium.com')
     And input('#login-password','Marla1212')
     And click('#login-button')
     Then waitFor("button[data-testid='create-playlist-button']")
